@@ -11,7 +11,7 @@ git --version
 Comandos para configuração do usuário na maquina.
 ```
 git config --global user.name "Fulaninha"
-git config --global user.emai "fdfggGfdfg@com"
+git config --global user.email "fdfggGfdfg@com"
 ```
 
 ### Inicializa o git na pasta atual
