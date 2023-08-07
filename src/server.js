@@ -1,7 +1,11 @@
-console.log('Server funfando!');
+const express = require('express');
 
-function sum(a, b) {
-    return console.log(a + b);
-}
+const api = express();
 
-sum(10, 2);
+api.get('/', (req, res) => {
+  res.json({ message: "MINHA API TÁ ON" });
+});
+
+api.listen(3000, () => {
+  console.log('API rodando na porta 3000');
+});

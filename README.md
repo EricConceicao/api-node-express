@@ -54,7 +54,7 @@ git push
 
 ## Node
 
-## Verifica a versão do node instalado
+### Verifica a versão do node instalado
 ```
 node --v
 ```
