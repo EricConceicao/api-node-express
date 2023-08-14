@@ -1,0 +1,23 @@
+{
+    "_id": "eb50e822-1bb9-4fc9-8b44-8f13af839e57",
+    "colName": "user",
+    "created": "2023-08-14T20:45:30.518Z",
+    "sortNum": 20000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "7992197c-2f11-4807-9f66-8305a1209d0a",
+            "colId": "eb50e822-1bb9-4fc9-8b44-8f13af839e57",
+            "containerId": "",
+            "name": "/user",
+            "url": "https://api-express-node-sqnj.onrender.com/user",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-08-14T20:45:30.522Z",
+            "modified": "2023-08-14T20:45:30.522Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

@@ -20,7 +20,7 @@ router.post('/:query', (req, res) => {
 
     // Filtra o vetor e retonar um objeto que tenha o nome correspondente
     const product = PRODUCT.filter(query => {
-        return query.nome !== req.params.query
+        return query.nome === req.params.query
     });
 
     res.json({ product });
