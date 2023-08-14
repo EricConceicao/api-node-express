@@ -10,7 +10,7 @@ git --version
 ### Verifica a versão do git instalada
 Comandos para configuração do usuário na maquina.
 ```
-git config --global user.name "Fulaninha"
+git config --global user.name "Fulaninho"
 git config --global user.email "fdfggGfdfg@com"
 ```
 
@@ -63,3 +63,11 @@ node --v
 ```
 npm -v
 ```
+### import from & require
+O atributo ``type`` no package.json determina o estilo de importação com ``type:'module'`` se usa o estilo: 
+
+``import n1 from './'``
+
+Do contrário:
+
+`const n1 = require('./')`
