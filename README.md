@@ -71,3 +71,30 @@ O atributo ``type`` no package.json determina o estilo de importação com ``typ
 Do contrário:
 
 `const n1 = require('./')`
+
+
+## Express Framework
+
+### Formas da organização com o modelo MVC
+
+A nomeclatura dos arquivos de controle fica a gosto do operador, e há duas maneiras de se fazer os controllers.
+
+#### Criando um arquivo único como user.controller.js e ter toda à lógica centrada nele 
+**Prós**
+- Código centralizado.
+- Menos imports no arquivos de rotas.
+**Contras**
+- O arquivo pode ficar imenso e dificultar a leitura do código.
+- Você terá que procurar determinado controle no meio da bagunça.
+
+#### Criando com uma pasta e vários arquivos para cada controller 
+```
+'controllers/user/insertUser.js'
+```
+**Prós**
+- Cada arquivo com nome do associado a seu controle.
+- Cada arquivo terá apenas um controle específico.
+- Muito fácil de usar a ferramenta buscar arquivos se você usar uma nomeclatura boa para os arquivos.
+**Contras**
+- Você terá muito mais arquivos, mesmo que sejam lógicas pequenas.
+- Você terá que importar um à um no arquivo de rotas ou onde for usar sua função.
