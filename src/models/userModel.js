@@ -1,5 +1,9 @@
 import db from '../database/db.js';
 
+async function listUsers() {
+    return await db.query('SELECT * FROM users'); 
+}
+
 async function getById(id) {
     return await db.query('SELECT name, email FROM users WHERE id = ?', [id]); 
 }
@@ -18,4 +22,4 @@ async function deleteUser(id) {
     return await db.query('DELETE FROM users WHERE id = ?', [id]);
 }
 
-export default {getById, insertUser, updateUser, deleteUser}
+export default {listUsers, getById, insertUser, updateUser, deleteUser}

@@ -7,7 +7,9 @@ import getUser  from "../controllers/users/getUser.js";
 import postUser from "../controllers/users/postUser.js";
 import putUser from "../controllers/users/putUser.js";
 import deleteUser from "../controllers/users/deleteUser.js";
+import listUsers from "../controllers/users/listUser.js";
 
+router.get('/list', listUsers);
 
 router.get('/', getUser);
 
