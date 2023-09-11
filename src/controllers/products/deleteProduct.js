@@ -14,7 +14,7 @@ async function deleteProduct(req, res) {
                 res.status(404).json({ message: 'Not found' });
             }
         } else {
-            res.status(400).json({ message: 'Expecify an id'});
+            res.status(400).json({ message: 'Expecify an id' });
         }
     } catch (e) {
         console.error('Error on updateProduct controller ' + e);

@@ -7,7 +7,9 @@ import getProduct from "../controllers/products/getProduct.js";
 import deleteProduct from "../controllers/products/deleteProduct.js";
 import putProduct from "../controllers/products/putProduct.js";
 import postProduct from "../controllers/products/postProduct.js";
+import listProduct from "../controllers/products/listProduct.js";
 
+router.get('/list', listProduct)
 
 router.get('/', getProduct);
 

@@ -5,17 +5,12 @@ async function getUser(req, res) {
         const userData = req.body;
         const [rows] = await db.getById(userData.id);
 
-        if(rows.length > 0) {
-            res.json({ 
-                success: "User found!",
-                user: rows[0] 
-            });    
+        if (rows.length > 0) {
+            res.status(200).json({ success: "Users found!", ...rows });
         } else {
-            res.status(404).json({ 
-                error: "User not found!", 
-            }); 
+            res.status(404).json({ error: "Users not found!" });
         }
-        
+
     } catch (e) {
         console.error('Error on getUser function on user controller ', e);
     }

@@ -7,18 +7,12 @@ async function postUser(req, res) {
             const [rows] = await db.insertUser(userInput);
             
             if (rows.affectedRows > 0) {
-                res.status(201).json({
-                    success: 'User signed!'
-                });
+                res.status(201).json({ success: 'User signed!' });
             } else {
-                res.status(500).json({
-                    error: 'Internal error'
-                })
+                res.status(500).json({ error: 'Internal error' });
             } 
         } else {
-            res.status(400).json({
-                error: 'Error, inputs missing'
-            })
+            res.status(400).json({ error: 'Error, inputs missing' });
         }
     } catch (e) {
         console.error('Error on postUser controller: ', e);

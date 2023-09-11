@@ -1,7 +1,11 @@
 import db from '../database/db.js';
 
+async function listById() {
+    return await db.query('SELECT * FROM products');
+}
+
 async function getById(id) {
-    return await db.query('SELECT * FROM products WHERE id = ?', [id]);
+    return await db.query('SELECT name, description, quantity FROM products WHERE id = ?', [id]);
 }
 
 async function insertProduct(product) {
@@ -18,4 +22,4 @@ async function deleteProduct(id) {
     return await db.query('DELETE FROM products WHERE id = ?', [id]);
 }
 
-export default {getById, insertProduct, updateProduct, deleteProduct}
+export default {getById, listById, insertProduct, updateProduct, deleteProduct}

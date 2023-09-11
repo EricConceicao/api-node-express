@@ -11,7 +11,7 @@ async function putProduct(req, res) {
                 res.status(200).json({ message: "Product updated successfully!" });
             
             } else {
-                res.status(500).json({message: 'Internal error'});
+                res.status(500).json({ message: 'Internal error'});
             }
         } else {
             res.status(400).json({ message: 'Missing entries'});
