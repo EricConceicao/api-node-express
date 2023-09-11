@@ -1,14 +1,24 @@
-function deleteProduct(req, res) {
-    const nome = req.params.query
+import db from '../../models/productModel.js';
 
-    const PRODUCT = [
-        { nome: "bola", qtd: 1, descricao:'Bola redonda de borracha' },
-        { nome: "copo", qtd: 3, descricao:'Copo da Coca' },
-        { nome: "garrafa", qtd: 7, descricao:'Garrafa de vidro' }
-    ];
-    const products = PRODUCT.filter( product => product.nome !== nome);
+async function deleteProduct(req, res) {
+    try {
+        const { id } = req.body;
+        
+        if (id !== null) {
+            const [rows] = await db.deleteProduct(id);
 
-    res.json({ products, message: `Produto ${nome} foi deletado` });
+            if (rows.affectedRows > 0) {
+                res.status(200).json({ message: "Product deleted successfully!" });
+            
+            } else {
+                res.status(404).json({ message: 'Not found' });
+            }
+        } else {
+            res.status(400).json({ message: 'Expecify an id'});
+        }
+    } catch (e) {
+        console.error('Error on updateProduct controller ' + e);
+    }
 }
 
 export default deleteProduct

@@ -9,4 +9,13 @@ async function insertUser(user) {
     return await db.query('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [name, email, password]);
 }
 
-export default {getById, insertUser}
+async function updateUser(user) {
+    const {id, name, email, password} = user;
+    return await db.query('UPDATE users SET name = ?, email = ?, password= ? WHERE id = ?', [name, email, password, id]);
+}
+
+async function deleteUser(id) {
+    return await db.query('DELETE FROM users WHERE id = ?', [id]);
+}
+
+export default {getById, insertUser, updateUser, deleteUser}

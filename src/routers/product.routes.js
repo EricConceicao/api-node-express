@@ -11,11 +11,11 @@ import postProduct from "../controllers/products/postProduct.js";
 
 router.get('/', getProduct);
 
-router.post('/:query', postProduct);
+router.post('/', postProduct);
 
 router.put('/', putProduct);
 
-router.delete('/:query', deleteProduct);
+router.delete('/', deleteProduct);
 
 
 export default router;
