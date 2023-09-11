@@ -1,9 +1,9 @@
-import user from "../../models/userModel.js";
+import db from "../../models/userModel.js";
 
 async function getUser(req, res) {
     try {
         const userData = req.body;
-        const [rows] = await user.getById(userData.id);
+        const [rows] = await db.getById(userData.id);
 
         if(rows.length > 0) {
             res.json({ 
