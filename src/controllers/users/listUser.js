@@ -7,7 +7,7 @@ async function listUsers(req, res) {
         if (rows.length > 0) {
             res.json({
                 success: "Listing users",
-                ...rows
+                users: rows
             });
         } else {
             res.status(404).json({ error: "Users not found!" });

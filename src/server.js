@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 // Router imports //
 import userRouter from './routers/user.routes.js';
@@ -10,6 +11,7 @@ import { PORT } from './config.js';
 
 const api = express();
 
+api.use(cors());
 api.use(bodyParser.json());
 
 api.use('/user', userRouter);
